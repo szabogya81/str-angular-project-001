@@ -10,6 +10,7 @@ import { HomeComponent } from './page/home/home.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { ProductPagingComponent } from './common/product-paging/product-paging.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     HomeComponent,
     ProductCardComponent,
     ProductListComponent,
-    FilterPipe
+    FilterPipe,
+    ProductPagingComponent
   ],
   imports: [
     BrowserModule,
