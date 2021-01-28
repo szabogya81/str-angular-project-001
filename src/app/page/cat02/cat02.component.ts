@@ -9,6 +9,7 @@ import { ProductService } from '../../service/product.service';
 export class Cat02Component implements OnInit {
   filterStr: string = '';
   products = ProductService.getProducts(2, this.filterStr);
+  featuredProducts = this.products.filter(p => p.featured).slice(0, ProductService.topFeaturedCount);
 
   constructor() { }
 
