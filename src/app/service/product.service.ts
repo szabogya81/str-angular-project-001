@@ -1,22 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../model/product';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductService {
-  static topSaleCount = 5;
-  static topFeaturedCount = 5;
-  static imageBasePath = './assets/img/';
 
-  private static list: Array<Product> = [
+  private list: Array<Product> = [
     {
       "id": 1,
       "catId": 1,
       "name": "Indiana Jones kalandjai 1-4.",
       "description": "Ebben az impozáns gyűjteményben megtalálod a díjnyertes alkotópáros, Steven Spielberg és George Lucas látványos akciójelenetekkel és humorral teli, összesen 6 Oscar-szobrot nyert Indiana Jones-sorozatának mind a 4 részét, valamint a filmekhez kapcsolódó számos izgalmas extrát.",
-      "image": `${ProductService.imageBasePath}IndianaJones.jpg`,
+      "image": `${this.config.imagePath}IndianaJones.jpg`,
       "price": 999,
       "stock": 20,
       "featured": false,
@@ -26,7 +24,7 @@ export class ProductService {
       "catId": 1,
       "name": "Tenet",
       "description": "A legsikeresebb Batman-trilógia és az Eredet rendezője, Christopher Nolan ismét különlegesen egyedi, izgalmas és meghökkentő fordulatokban gazdag thrillert rendezett, amelyen egy angol kémnek kellene megmentenie a Földet a rá leselkedő és pusztulással fenyegető katasztrófától. Ám a szuperügynöknek nemcsak az idegen hatalmak embereivel, hanem a legnagyobb ellenséggel, az Idővel is meg kell küzdenie.",
-      "image": `${ProductService.imageBasePath}tenet.jpg`,
+      "image": `${this.config.imagePath}tenet.jpg`,
       "price": 1199,
       "stock": 14,
       "featured": true,
@@ -36,7 +34,7 @@ export class ProductService {
       "catId": 1,
       "name": "Bad Boys 1-3.",
       "description": "A rosszfiúk, Mike Lowrey (Will Smith) és Marcus Burnett (Martin Lawrence) visszatértek, hogy újra a feje tetejére állítsák Miamit és elkapjanak néhány rosszfiút. Miután egy rejtélyes merénylő, aki az igazságszolgáltatás jó pár emberével végzett már, Mike életére tör, az örökifjú zsaru meggyőzi a már nagypapa Marcust, hogy tegye félre korai nyugdíjazásáról szőtt terveit és még egyszer utoljára lendüljenek együtt akcióba. „Smith és Lawrence is ütős alakítást nyújt” (Double Toasted) ebben a „nagyszabású, bombasztikus akciófilmben” (IGN Movies).",
-      "image": `${ProductService.imageBasePath}badboys.jpg`,
+      "image": `${this.config.imagePath}badboys.jpg`,
       "price": 1399,
       "stock": 5,
       "featured": false,
@@ -46,7 +44,7 @@ export class ProductService {
       "catId": 1,
       "name": "Sonic, a sündisznó",
       "description": "Sonic, a sündisznó véletlenül hihetetlen erő birtokosa lesz, amit ő maga sem ért teljesen. Saját védelme érdekében a Földön rejtőzik el, és egyetlen szabályt kell betartania: nem szabad, hogy a világ tudomást szerezzen a létezéséről. Ám ez nem könnyű feladat egy 15 évesnek, főleg ha az a 15 éves Sonic képességeivel és habitusával van megáldva. Így aztán nem kell hozzá sok, hogy felfedezze őt Tom, a szarkasztikus, ám áldott jószívű kisvárosi zsaru. Ők ketten összeállnak, és hihetetlenül akciódús kalandokba keverednek, miközben átszelik a fél világot úgy, hogy közben üldözi őket a mániákus Dr. Robotnyik és robotszerkentyűi…",
-      "image": `${ProductService.imageBasePath}sonic.jpg`,
+      "image": `${this.config.imagePath}sonic.jpg`,
       "price": 9499,
       "stock": 7,
       "featured": true,
@@ -57,7 +55,7 @@ export class ProductService {
       "catId": 1,
       "name": "Star Trek",
       "description": "Az ifjú legénység első útjára készül a valaha készült legfejlettebb csillaghajó, a U.S.S. Enterprise fedélzetén. Ezen az úton, mely csupa akció, humor, kozmikus veszély, az újonc kadétoknak meg kell állítaniuk egy gonosz lényt, akinek bosszúmissziója az emberiség létét fenyegeti. A galaxis sorsa két rivális kezében van. Egyikük, James Kirk, a bajkeverő, kalandkereső iowai farmerlegény. A másik, Spock, egy logikán alapuló társadalomban nevelkedett, amely elvet mindenféle érzelmet. Amint a heves ösztön összecsap a hideg ésszel, valószínűtlen, de erős szövetségük az egyetlen, amely átvezetheti legénységüket az elképzelhetetlen veszélyeken, hogy eljussanak oda, ahová ember még nem merészkedett!",
-      "image": `${ProductService.imageBasePath}startrek.jpg`,
+      "image": `${this.config.imagePath}startrek.jpg`,
       "price": 799,
       "stock": 8,
       "featured": true,
@@ -520,7 +518,7 @@ export class ProductService {
       "catId": 2,
       "name": "Csernobil",
       "description": "A Csernobil az HBO® ötrészes minisorozataként a történelem legsúlyosabb, emberi vétség által okozott katasztrófájának nagyhatású, kendőzetlen történetét meséli el. 1986-ban a Szovjetunióban található Csernobili Atomerőművet nagy erejű robbanás rázta meg, amely nem csupán Belorussziát, Oroszországot és Ukrajnát borította be radioaktív anyaggal, de még Skandináviába és a Nyugat-Európába is jutott belőle. Az éjszaka történő detonáció pillanatától kezdve az azt követő napok, hetek és hónapok súlyos emberáldozataival járó káoszát bemutatva a Csernobil magával ragadó emberi történeteket vázol fel a bátorságról és az áldozathozatalról, melyeket átjár az a sokkoló felismerés, hogy mindeközben a kormány nem csupán bűnbakokat keres, de még a katasztrófa súlyosságát is el akarja bagatellizálni.",
-      "image": `${ProductService.imageBasePath}csernobil.jpg`,
+      "image": `${this.config.imagePath}csernobil.jpg`,
       "price": 629,
       "stock": 10,
       "featured": true,
@@ -530,7 +528,7 @@ export class ProductService {
       "catId": 2,
       "name": "A leleményes Hugo",
       "description": "Légy üdvözölve a látványos kalandok varázslatos világában! Mikor Hugo, a fortélyos és talpraesett árva felfedez egy titkot, melyet apja hagyott hátra, a rejtély nyomába szegődve olyan kalandra indul, amely körülötte mindenki életét megváltoztatja, és amelynek végén egy biztonságot nyújtó, szeretetteljes hely várja, melyet talán ismét otthonának nevezhet.",
-      "image": `${ProductService.imageBasePath}hugo.jpg`,
+      "image": `${this.config.imagePath}hugo.jpg`,
       "price": 4699,
       "stock": 8,
       "featured": false,
@@ -1020,9 +1018,10 @@ export class ProductService {
     }
   ];
 
-  constructor() { }
+  constructor(private config: ConfigService) { 
+  }
 
-  static getProducts(categoryId: number = 0, filterStr: string = ''): Array<Product> {
+  getProducts(categoryId: number = 0, filterStr: string = ''): Array<Product> {
     let filteredList = this.list;
 
     if (categoryId > 0) {

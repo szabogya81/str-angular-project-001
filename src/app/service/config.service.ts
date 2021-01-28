@@ -19,5 +19,9 @@ export class ConfigService {
     {text: 'Bluray', link: '/cat02'},
   ];
 
+  topSaleCount = 5;
+  topFeaturedCount = 5;
+  imagePath = './assets/img/';
+
   constructor() { }
 }
