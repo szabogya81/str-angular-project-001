@@ -1,29 +1,3 @@
-<h3>Az alábbi table csak egy kezdeti minta/példa a ProductService használatra - a 2-es kategória szűrést tartalmazza csak, a keresőmezős szűrést nem. (Majd ha lesz kereő :))</h3>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>CatId</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th>Featured</th>
-      <th>Active</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{ product.id }}</td>
-      <td>{{ product.catId }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.description }}</td>
-      <td>{{ product.image }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.stock }}</td>
-      <td>{{ product.featured }}</td>
-      <td>{{ product.active }}</td>
-    </tr>
-  </tbody>
-</table>
+<h3>Termék lista (2-es kategória, szűrhető) minta</h3>
+
+<app-product-list [products]="products"></app-product-list>

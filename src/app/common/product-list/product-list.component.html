@@ -1,0 +1,11 @@
+<div class="input-group rounded my-5">
+  <input (keyup)= "onChangeFilter($event)" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fa fa-search"></i>
+  </span>
+</div>
+
+<div *ngFor="let product of products | filter:filterStr">
+  <app-product-card [product]="product"></app-product-card>
+</div>
