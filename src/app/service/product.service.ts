@@ -4,8 +4,11 @@ import { Product } from '../model/product';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
 
+export class ProductService {
+  static topSaleCount = 5;
+  static topFeaturedCount = 5;
+  
   private static list: Array<Product> = [
     {
       "id": 1,
