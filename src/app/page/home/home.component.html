@@ -1,1 +1,36 @@
-<p>home works!</p>
+<h3>Az alábbi table csak egy kezdeti minta/példa  a ProductService használatra - az összes product (film) szerepel, minden tulajdonságával (id, catId, name
+  stb.) szűrés nélkül</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>CatId</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Featured</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.catId }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.image }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.featured }}</td>
+      <td>{{ product.active }}</td>
+      <!-- <td>
+        <button (click)="onSelectUser(user)" class="btn btn-info">
+          <i class="fa fa-eye"></i>
+        </button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
