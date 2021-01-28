@@ -8,4 +8,5 @@ export class Product {
   stock: number;
   featured: boolean;
   active: boolean;
+  salePrice?: number = null;
 }
