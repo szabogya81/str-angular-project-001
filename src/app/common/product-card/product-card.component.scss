@@ -1,0 +1,33 @@
+@use "../variables/colors" as * ;
+
+.font-style{
+   font-family:  Helvetica, Arial, sans-serif;
+}
+
+.card-main{
+    background-color: $colors-butterYellow;
+    box-shadow: 3px 0 10px #ababab;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    transition: all .4s ease-in-out;
+    &:hover{
+        background-color:  $colors-lightOrange;
+        box-shadow: 0 0 20px  $colors-laserRed;
+        transform: scale(1.05); 
+    }
+}
+
+.card-image{
+    height: auto;
+    width: 100%;
+}
+
+
+.card-body{
+    user-select: none;
+}
+
+.card-discount{
+    color: $colors-laserRed;
+}
