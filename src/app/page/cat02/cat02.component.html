@@ -1,4 +1,17 @@
-<h3>Termék lista (2-es kategória, szűrhető) minta</h3>
+<div class="container">
+  <div class="row">
+    <h3>Kiemelt termékek</h3>
+    <div class="lineSep"></div>
+    <app-product-paging [products]="featuredProducts"></app-product-paging>
+  </div>
+  <div class="row py-4">
+    <h4>Keressen Bluray termékeink között:</h4>
+    <app-product-list [products]="products"></app-product-list>
+  </div>
+</div>
+
+
+<!-- <h3>Termék lista (2-es kategória, szűrhető) minta</h3>
 
 <div class="container">
   <div class="row">
@@ -10,4 +23,4 @@
       <app-product-paging [products]="featuredProducts"></app-product-paging>
     </div>
   </div>
-</div>
+</div> -->
