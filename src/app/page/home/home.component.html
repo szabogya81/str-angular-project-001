@@ -1,4 +1,21 @@
-<h3>Termék lista (teljes, szűrhető) minta</h3>
+<div class="container">
+  <div class="row">
+    <h3>Akciós termékek</h3>
+    <div class="lineSep"></div>
+    <app-product-paging [products]="saleProducts"></app-product-paging>
+  </div>
+  <div class="row">
+    <h3>Kiemelt termékek</h3>
+    <div class="lineSep"></div>
+    <app-product-paging [products]="featuredProducts"></app-product-paging>
+  </div>
+  <div class="row py-4">
+    <h4>Keressen termékeink között:</h4>
+    <app-product-list [products]="products"></app-product-list>
+  </div>
+</div>
+
+<!-- <h3>Termék lista (teljes, szűrhető) minta</h3>
 
 <div class="container">
   <div class="row">
@@ -18,4 +35,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
