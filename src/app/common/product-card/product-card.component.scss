@@ -96,9 +96,14 @@ $text-movie-description:14px;
   }
 }
 
+.collection{
+  justify-content: space-between;
+  margin: auto 0;
+}
+
 .cutter {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
 }
