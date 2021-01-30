@@ -1033,4 +1033,12 @@ export class ProductService {
       return filteredList;
     }
   }
+
+  getFiveRandomFeatured(): Array<Product> {
+    const topFiveFeaturedProducts: Product[] = this.list.filter(product => product.featured)
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 5);
+
+    return topFiveFeaturedProducts;
+  }
 }
