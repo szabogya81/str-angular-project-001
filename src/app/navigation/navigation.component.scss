@@ -1,0 +1,55 @@
+@use "../common/variables/_colors.scss";
+@use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800;900&display=swap');
+
+$gradient-background: linear-gradient(colors.$colors-laserRed,colors.$colors-dark);
+
+.navbar {
+  background-color:colors.$colors-dark;
+
+  &-logo {
+    background: $gradient-background;
+  }
+
+  &-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+  }
+
+  &-toggler {
+    border: none;
+
+    &-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28254, 65, 65, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+.nav-item {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  background-image: none;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: $gradient-background;
+    border-radius: .25rem;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 1;
+  }
+  
+}

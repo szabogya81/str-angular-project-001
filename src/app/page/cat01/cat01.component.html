@@ -1,1 +1,11 @@
-<p>cat01 works!</p>
+<div class="container">
+  <div class="row">
+    <h3>Kiemelt termékek</h3>
+    <div class="lineSep"></div>
+    <app-product-paging [products]="featuredProducts"></app-product-paging>
+  </div>
+  <div class="row py-4">
+    <h4>Keressen DVD termékeink között:</h4>
+    <app-product-list [products]="products"></app-product-list>
+  </div>
+</div>
