@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class Cat02Component implements OnInit {
   filterStr: string = '';
   products = this.service.getProducts(2, this.filterStr);
-  featuredProducts = this.products.filter(p => p.featured).slice(0, this.config.topFeaturedCount);
+  featuredProducts = this.service.getFiveRandomFeatured();
 
   constructor(private config: ConfigService, private service: ProductService) { }
 
