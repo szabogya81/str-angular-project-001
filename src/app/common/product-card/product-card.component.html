@@ -6,14 +6,14 @@
     <h3 class="card__body--title pt-3 pb-1 px-1">{{product.name}}</h3>
     <p class="card__body--description pt-2 px-1 cutter">{{product.description}}</p>
   </div>
-  <div class="mt-auto">
-    <p class="card__body--stock h6 px-1 pt-2 pb-4">Készlet: {{product.stock}} db</p>
-    <p *ngIf="!product.salePrice" class="card__body--price text-center h5 py-2">Ár:
+  <div class="div__stockPrice mt-auto">
+    <p class="div__stockPrice--stock h6 px-1 pt-2 pb-4">Készlet: {{product.stock}} db</p>
+    <p *ngIf="!product.salePrice" class="div__stockPrice--price text-center h5 py-2">Ár:
       {{product.price}} Ft</p>
     <p *ngIf="product.salePrice" style="text-decoration-line: line-through"
-      class="card__body--price text-center h5 py-2">Ár:
+      class="div__stockPrice--price text-center h5 py-2">Ár:
       {{product.price}} Ft</p>
-    <p *ngIf="product.salePrice" class="card__body--discount text-center h3 py-2">Akciós ár:
+    <p *ngIf="product.salePrice" class="div__stockPrice--discount text-center h3 py-2">Akciós ár:
       {{product?.salePrice}} Ft</p>
   </div>
 

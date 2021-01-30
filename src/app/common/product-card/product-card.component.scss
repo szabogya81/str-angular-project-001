@@ -74,6 +74,10 @@ $text-movie-description:14px;
     text-justify: inter-word;
     text-align: justify;
   }
+}
+
+.div__stockPrice{
+  user-select: none;
 
   &--stock {
     color: $colors-laserRed;
@@ -94,11 +98,6 @@ $text-movie-description:14px;
     font-size: $text-action-price;
     font-weight: $bold;
   }
-}
-
-.collection{
-  justify-content: space-between;
-  margin: auto 0;
 }
 
 .cutter {
