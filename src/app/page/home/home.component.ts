@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   filterStr: string = '';
   products = this.service.getProducts(0, this.filterStr);
   saleProducts = this.products.filter(p => p.salePrice).slice(0, this.config.topSaleCount);
-  featuredProducts = this.products.filter(p => p.featured).slice(0, this.config.topFeaturedCount);
-  
+  featuredProducts = this.service.getFiveRandomFeatured();
+
   constructor(private config: ConfigService, private service: ProductService) { }
 
   ngOnInit(): void {

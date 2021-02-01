@@ -1,45 +1,19 @@
-<div class="card-deck p-2">
-  <div class="card">
-    <div class="card__image">
-      <img src="{{product.image}}" class="card__image--top" alt="{{product.name}}">
-    </div>
-    <div class="col-12 card__body d-flex flex-column py-3">
-      <h3 class="card__body--title pt-3 pb-1">{{product.name}}</h3>
-      <p class="card__body--description pt-2 cutter">{{product.description}}</p>
-      <p class="card__body--stock h6 pt-2 pb-4">Készlet: {{product.stock}} db</p>
-      <div class="align-items-end">
-        <p *ngIf="!product.salePrice" class="card__body--price text-center h5 py-2 ">Ár:
-          {{product.price}} Ft</p>
-        <p *ngIf="product.salePrice" style="text-decoration-line: line-through"
-          class="card__body--price text-center h5 py-2">Ár:
-          {{product.price}} Ft</p>
-        <p *ngIf="product.salePrice" class="card__body--discount text-center h3 py-2">Akciós ár:
-          {{product?.salePrice}} Ft</p>
-      </div>
-    </div>
+<div class="card mx-2 h-100">
+  <div class="card__image ">
+    <img src="{{product.image}}" class="card__image--top" alt="{{product.name}}">
+  </div>
+  <div class="card__body d-flex flex-column py-3">
+    <h3 class="card__body--title pt-3 pb-1 px-1">{{product.name}}</h3>
+    <p class="card__body--description pt-2 px-1 cutter">{{product.description}}</p>
+  </div>
+  <div class="div__stockPrice mt-auto">
+    <p class="div__stockPrice--stock h6 px-1 pt-2 pb-4">Készlet: {{product.stock}} db</p>
+    <p *ngIf="!product.salePrice" class="div__stockPrice--price text-center h5 py-2">Ár:
+      {{product.price}} Ft</p>
+    <p *ngIf="product.salePrice" style="text-decoration-line: line-through"
+      class="div__stockPrice--price text-center h5 py-2">Ár:
+      {{product.price}} Ft</p>
+    <p *ngIf="product.salePrice" class="div__stockPrice--discount text-center h3 py-2">Akciós ár:
+      {{product?.salePrice}} Ft</p>
   </div>
 </div>
-
-<!-- <div class="container py-4">
-  <div class="row">
-    <div class="col-12 p-0">
-      <div class="card h-100 ">
-        <div class="card__image">
-          <img src="{{product.image}}" class="card__image--top" alt="{{product.name}}">
-        </div>
-        <div class="col-12 card__body d-flex flex-column py-3">
-          <h3 class="card__body--title pt-3 pb-1">{{product.name}}</h3>
-          <p class="card__body--description pt-2">{{product.description}}</p>
-          <p class="card__body--stock h6 pt-2 pb-4">Készlet: {{product.stock}} db</p>
-          <p *ngIf="!product.salePrice" class="card__body--price text-center h5 py-2 ">Ár:
-            {{product.price}} Ft</p>
-          <p *ngIf="product.salePrice" style="text-decoration-line: line-through"
-            class="card__body--price text-center h5 py-2">Ár:
-            {{product.price}} Ft</p>
-          <p *ngIf="product.salePrice" class="card__body--discount text-center h3 py-2">Akciós ár:
-            {{product?.salePrice}} Ft</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
