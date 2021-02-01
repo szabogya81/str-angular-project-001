@@ -1,22 +1,16 @@
-<form class="search" action="/action_page.php">
-  <input (keyup)="onChangeFilter($event)" type="text" placeholder="Search.." name="search">
-  <button class="button" type="submit"><i class="fa fa-search"></i></button>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form class="search" action="/action_page.php">
+        <input (keyup)="onChangeFilter($event)" type="text" placeholder="Search.." name="search">
+        <button class="button" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="py-4" *ngFor="let product of products | filter:filterStr">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>
-
-<!-- <div class="input-group rounded my-5">
-  <input (keyup)="onChangeFilter($event)" type="search" class="form-control rounded" placeholder="Search"
-    aria-label="Search" aria-describedby="search-addon" />
-  <span class="input-group-text border-0" id="search-addon">
-    <i class="fa fa-search"></i>
-  </span>
-</div>
-
-<div *ngFor="let product of products | filter:filterStr">
-  <app-product-card [product]="product"></app-product-card>
-</div> -->
