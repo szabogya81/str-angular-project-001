@@ -154,4 +154,3 @@ az id alapján meg tudjuk határoni, hogy a szerver melyiket frissítse vagy
 törölje.
 
 ## Sok sikert!
-
