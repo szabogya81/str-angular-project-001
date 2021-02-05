@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ProductCardComponent } from './common/product-card/product-card.compone
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ProductPagingComponent } from './common/product-paging/product-paging.component';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ProductPagingComponent } from './common/product-paging/product-paging.c
     ProductCardComponent,
     ProductListComponent,
     FilterPipe,
-    ProductPagingComponent
+    ProductPagingComponent,
+    DataEditorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
