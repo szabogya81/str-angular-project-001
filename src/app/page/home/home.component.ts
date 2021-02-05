@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from 'src/app/service/config.service';
+
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -9,12 +9,15 @@ import { ProductService } from 'src/app/service/product.service';
 })
 
 export class HomeComponent implements OnInit {
-  filterStr: string = '';
-  products = this.service.getProducts(0, this.filterStr);
-  saleProducts = this.products.filter(p => p.salePrice).slice(0, this.config.topSaleCount);
-  featuredProducts = this.service.getFiveRandomFeatured();
 
-  constructor(private config: ConfigService, private service: ProductService) { }
+  categoryId = 0;
+  filterStr: string = '';
+
+  products = this.service.getAll(this.categoryId, this.filterStr);
+  saleProducts = this.service.getSaleProducts();
+  featuredProducts = this.service.getRandomFeaturedProducts();
+
+  constructor(private service: ProductService) { }
 
   ngOnInit(): void {
   }

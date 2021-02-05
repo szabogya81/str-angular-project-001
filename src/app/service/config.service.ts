@@ -21,7 +21,7 @@ export class ConfigService {
 
   topSaleCount = 5;
   topFeaturedCount = 5;
-  imagePath = './assets/img/';
+  productsUrl = 'http://localhost:3000/products';
 
   constructor() { }
 }
