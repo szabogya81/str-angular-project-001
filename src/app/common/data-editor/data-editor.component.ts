@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Product } from 'src/app/model/product';
@@ -15,7 +15,11 @@ export class DataEditorComponent implements OnInit {
   categoryId = 0;
   filterStr: string = '';
 
-  products: Observable<Product[]>;
+=======
+  @Input() products: Observable<Product[]>;
+  @Output() updateClick: EventEmitter<Product> = new EventEmitter();
+  @Output() deleteClick: EventEmitter<Product> = new EventEmitter();
+
 
   cols: IMovTable[] = this.config.movTableCols;
 
@@ -28,17 +32,13 @@ export class DataEditorComponent implements OnInit {
     this.setProducts();
   }
 
-
   setProducts () {
     this.products = this.productService.getAll(this.categoryId, this.filterStr);
+
+  onUpdate(movies: Product): void {
+    this.updateClick.emit(movies);
   }
 
-  onUpdate(movie: Product): void {
-    this.productService.update(movie).subscribe();
-  }
-
-  onDelete(movie: Product): void {
-    this.productService.remove(movie).subscribe( () =>
-    this.products = this.productService.getAll(this.categoryId, this.filterStr));
-  }
+  onDelete(movies: Product): void {
+    this.deleteClick.emit(movies);
 }
