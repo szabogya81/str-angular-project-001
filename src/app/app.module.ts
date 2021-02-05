@@ -26,7 +26,7 @@ import { AdminComponent } from './page/admin/admin.component';
     ProductListComponent,
     FilterPipe,
     ProductPagingComponent,
-    DataEditorComponent
+    DataEditorComponent,
     AdminComponent
 
   ],
