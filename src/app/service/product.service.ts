@@ -1041,4 +1041,13 @@ export class ProductService {
 
     return topFiveFeaturedProducts;
   }
+
+  update(movie: Product): Array<Product> {
+    return;
+  };
+
+  remove(movie: Product): Array<Product> {
+    return;
+  };
+
 }
