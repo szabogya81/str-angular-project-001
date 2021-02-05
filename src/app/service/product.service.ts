@@ -48,4 +48,13 @@ export class ProductService {
             )
       );
   }
+
+  update(movie: Product): Array<Product> {
+    return;
+  };
+
+  remove(movie: Product): Array<Product> {
+    return;
+  };
+
 }
