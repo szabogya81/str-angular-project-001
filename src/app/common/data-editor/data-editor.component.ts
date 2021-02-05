@@ -18,6 +18,7 @@ export class DataEditorComponent implements OnInit {
   @Output() updateClick: EventEmitter<Product> = new EventEmitter();
   @Output() deleteClick: EventEmitter<Product> = new EventEmitter();
 
+
   cols: IMovTable[] = this.config.movTableCols;
 
   constructor(
