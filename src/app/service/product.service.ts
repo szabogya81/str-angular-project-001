@@ -38,23 +38,22 @@ export class ProductService {
     if(categoryId > 0) {
       url = `${url}&catId=${categoryId}`;
     }
-    
+
     return this.http.get<Product[]>(url)
       .pipe(
             map(
-                p => 
+                p =>
                   p.sort(() => 0.5 - Math.random())
                    .slice(0, this.config.topFeaturedCount)
             )
       );
   }
 
-  update(movie: Product): Array<Product> {
-    return;
-  };
+  update(movie: Product): Observable<Product> {
+    return this.http.patch<Product>(`${this.config.productsUrl}/${movie.id}`, movie);
+  }
 
-  remove(movie: Product): Array<Product> {
-    return;
-  };
-
+  remove(movie: Product): Observable<Product> {
+    return this.http.delete<Product>(`${this.config.productsUrl}/${movie.id}`);
+  }
 }
