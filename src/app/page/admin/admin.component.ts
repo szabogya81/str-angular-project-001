@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { Product } from 'src/app/model/product';
-import { ConfigService } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -11,19 +11,26 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class AdminComponent implements OnInit {
 
-  products: Observable<Product[]> = this.productService.getAll();
+  categoryId = 0;
+  filterStr: string = '';
 
-  constructor(private config: ConfigService, private productService: ProductService) { }
+  products: Observable<Product[]>;
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.setProducts();
   }
 
-  onUpdate(movies: Product): void {
-    this.productService.update(movies);
+  setProducts() {
+    this.products = this.productService.getAll(this.categoryId, this.filterStr);
+  } 
+
+  onUpdate(movie: Product): void {
+    this.productService.update(movie).subscribe();
   }
 
-  onDelete(movies: Product): void {
-    this.productService.remove(movies);
+  onDelete(movie: Product): void {
+    this.productService.remove(movie).subscribe(() => this.setProducts());
   }
-
 }

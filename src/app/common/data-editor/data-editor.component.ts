@@ -11,13 +11,9 @@ import { ConfigService, IMovTable } from 'src/app/service/config.service';
 })
 export class DataEditorComponent implements OnInit {
 
-  categoryId = 0;
-  filterStr: string = '';
-
   @Input() products: Observable<Product[]>;
   @Output() updateClick: EventEmitter<Product> = new EventEmitter();
   @Output() deleteClick: EventEmitter<Product> = new EventEmitter();
-
 
   cols: IMovTable[] = this.config.movTableCols;
 

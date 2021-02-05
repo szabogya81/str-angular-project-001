@@ -61,7 +61,7 @@ export class ProductService {
         { 'Content-Type': 'application/json' }
       )
     };
-    return this.http.put<Product>(`${this.config.productsUrl}/${movie.id}`, JSON.stringify(movie), this.httpOptions);
+    return this.http.put<Product>(`${this.config.productsUrl}/${movie.id}`, movie, this.httpOptions);
   }
 
   remove(movie: Product | number): Observable<Product> {
