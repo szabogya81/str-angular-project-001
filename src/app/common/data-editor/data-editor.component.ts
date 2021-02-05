@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ConfigService, IMovTable } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
@@ -12,7 +13,10 @@ export class DataEditorComponent implements OnInit {
 
   categoryId = 0;
   filterStr: string = '';
-  products = this.productService.getAll(this.categoryId, this.filterStr);
+
+  products: Observable<Product[]> = this.productService.getAll();
+  // Observable<User[]> = this.userService.getAll();
+  // products = this.productService.getAll(this.categoryId, this.filterStr);
 
   cols: IMovTable[] = this.config.movTableCols;
 
