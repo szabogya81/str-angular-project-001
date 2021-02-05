@@ -23,6 +23,7 @@ export class ConfigService {
     {text: 'Home', link: '/', icon: 'home'},
     {text: 'DVD', link: '/cat01'},
     {text: 'Bluray', link: '/cat02'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   movTableCols: IMovTable[] = [
@@ -39,7 +40,7 @@ export class ConfigService {
 
   topSaleCount = 5;
   topFeaturedCount = 5;
-  imagePath = './assets/img/';
+  productsUrl = 'http://localhost:3000/products';
 
   constructor() { }
 }

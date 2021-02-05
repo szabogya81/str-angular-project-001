@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { Cat01Component } from './page/cat01/cat01.component';
@@ -13,6 +14,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { FilterPipe } from './pipe/filter.pipe';
 import { ProductPagingComponent } from './common/product-paging/product-paging.component';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { AdminComponent } from './page/admin/admin.component';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
     ProductListComponent,
     FilterPipe,
     ProductPagingComponent,
-    DataEditorComponent
+    DataEditorComponent,
+    AdminComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

@@ -2,16 +2,14 @@
   <div class="row">
     <h3>Kiemelt termékek</h3>
     <div class="lineSep"></div>
-    <div class="col-12">
-      <app-product-paging [products]="featuredProducts"></app-product-paging>
-    </div>
+    <app-product-paging [products]="featuredProducts | async"></app-product-paging>
   </div>
   <div class="row py-4">
     <h4>Keressen Bluray termékeink között:</h4>
   </div>
   <div class="row">
     <div class="col-12">
-      <app-product-list [products]="products"></app-product-list>
+      <app-product-list [products]="products | async"></app-product-list>
     </div>
   </div>
 </div>
