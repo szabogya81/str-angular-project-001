@@ -11,6 +11,7 @@ import { ProductCardComponent } from './common/product-card/product-card.compone
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ProductPagingComponent } from './common/product-paging/product-paging.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductPagingComponent } from './common/product-paging/product-paging.c
     ProductCardComponent,
     ProductListComponent,
     FilterPipe,
-    ProductPagingComponent
+    ProductPagingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

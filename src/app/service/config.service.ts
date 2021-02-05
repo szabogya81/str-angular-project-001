@@ -17,6 +17,7 @@ export class ConfigService {
     {text: 'Home', link: '/', icon: 'home'},
     {text: 'DVD', link: '/cat01'},
     {text: 'Bluray', link: '/cat02'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   topSaleCount = 5;
