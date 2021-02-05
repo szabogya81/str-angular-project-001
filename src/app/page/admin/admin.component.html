@@ -1,1 +1,4 @@
-<app-data-editor></app-data-editor>
+<app-data-editor [products]="products"
+    (onUpdate)="onUpdate($event)"
+    (onDelete)="onDelete($event)"
+></app-data-editor>

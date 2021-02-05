@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Product } from 'src/app/model/product';
 import { ConfigService, IMovTable } from 'src/app/service/config.service';
-import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-data-editor',
@@ -15,30 +14,24 @@ export class DataEditorComponent implements OnInit {
   categoryId = 0;
   filterStr: string = '';
 
-  products: Observable<Product[]>;
+  @Input() products: Observable<Product[]>;
+  @Output() updateClick: EventEmitter<Product> = new EventEmitter();
+  @Output() deleteClick: EventEmitter<Product> = new EventEmitter();
 
   cols: IMovTable[] = this.config.movTableCols;
 
   constructor(
-    private config: ConfigService,
-    private productService: ProductService,
+    private config: ConfigService
   ) { }
 
   ngOnInit(): void {
-    this.setProducts();
-  }
-
-
-  setProducts () {
-    this.products = this.productService.getAll(this.categoryId, this.filterStr);
   }
 
   onUpdate(movie: Product): void {
-    this.productService.update(movie).subscribe();
+    this.updateClick.emit(movie);
   }
 
   onDelete(movie: Product): void {
-    this.productService.remove(movie).subscribe( () =>
-    this.products = this.productService.getAll(this.categoryId, this.filterStr));
+    this.deleteClick.emit(movie);
   }
 }
