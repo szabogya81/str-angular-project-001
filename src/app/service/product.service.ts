@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,6 +11,12 @@ import { ConfigService } from './config.service';
 })
 
 export class ProductService {
+
+  httpOptions = {
+    headers: new HttpHeaders(
+      { 'Content-Type': 'application/json' }
+    )
+  }
 
   constructor(private config: ConfigService, private http: HttpClient) {
   }
@@ -50,10 +56,16 @@ export class ProductService {
   }
 
   update(movie: Product): Observable<Product> {
-    return this.http.patch<Product>(`${this.config.productsUrl}/${movie.id}`, movie);
+    let httpOptions = {
+      headers: new HttpHeaders(
+        { 'Content-Type': 'application/json' }
+      )
+    };
+    return this.http.put<Product>(`${this.config.productsUrl}/${movie.id}`, JSON.stringify(movie), this.httpOptions);
   }
 
-  remove(movie: Product): Observable<Product> {
-    return this.http.delete<Product>(`${this.config.productsUrl}/${movie.id}`);
+  remove(movie: Product | number): Observable<Product> {
+    let id = typeof(movie) === 'number' ? movie : movie.id;
+    return this.http.delete<Product>(`${this.config.productsUrl}/${id}`, this.httpOptions);
   }
 }
