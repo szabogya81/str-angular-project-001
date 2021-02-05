@@ -44,7 +44,7 @@ Amint látjátok, a fő komponenseket már elkészítettem és a menüt is beál
 - Ez a főoldala a webshopnak.
 - Jelenjen meg egy kiemelt termék sor az oldal tetején.  
 > 5 kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
-> Jelenjen meg egy akciós termék sor a kiemelt termékek alatt, ide bármilyen random termék 
+- Jelenjen meg egy akciós termék sor a kiemelt termékek alatt, ide bármilyen random termék 
 kerülhet, szintén 5 darab legyen.
 
 ## Category oldalak
@@ -104,6 +104,54 @@ speciális mappa, a webpack átmásolja a kész alkalmazásba. Ha mondjuk az
 ebben a mappában létrehozol egy `img` almappát a képeknek, akkor egy képet így 
 érsz el: `/assets/img/logo.png`. A képeket érdemes egyforma méretűre vágni, hogy 
 ne kelljen vele annyit dolgozni a stílusnál.
+
+## Extra funkciók
+- A lista nézetben lehessen a termékeket szűrni nem csak név, hanem más paraméterek alapján is.
+- A lista nézetben lehessen rendezni is a termék kártyákat, mondjuk ár, név, akció, kiemelt alapján.
+
+-------
+
+# Második Felvonás
+> A második körben a már elkészült alkalmazást kell továbbfejleszteni. A feladat 
+egy adminisztrációs felület készítése, ahol a termékeket szerkeszteni lehet. Ez 
+az admin felület a termékeket már élő szerverről fogja betölteni.
+
+## AdminComponent
+- Hozzatok létre egy új komponenst, admin néven.
+- Állítsátok be, hogy ez megjelenjen a menüben és az `admin` url -en legyen 
+elérhető.
+- Ezen az oldalon fog megjelenni egy szerkesztő komponens, ahol a termékek 
+adatait lehet módosítani.
+
+## DataEditorComponent
+- Hozzatok létre egy új komponenst, a neve data-editor legyen. Ezt a komponenst 
+helyezzétek el az admin oldalon.
+- Jelenjen meg benne egy adat lista, táblázatos formában (ez lehet valóban egy 
+táblázat, vagy ahhoz hasonlóan egy div -ekből vagy komponensekből álló lista).
+- Ez a komponenst a termékek adatok szerkesztését látja majd el.
+- Az adatsorokban az egyes adatok input elemként jelenjenek meg, kétirányú 
+adatkötéssel. Minden adatsor végén legyen három gomb a fő műveletekhez. Az `id` 
+tulajdonságot ne lehessen szerkeszteni.
+- Az adatlistát lehessen szűrni egy bizonyos oszlop alapján egy beviteli 
+mezőbe írva.
+
+## Json server
+- Költöztessétek át a termékek adatait a ProductService -ből egy .json fájlba és 
+a tanultak szerint indítsatok egy json-server -t, ami kiszolgálja a termék 
+adatokat és lehetővé teszi a termékek szerkesztését.  
+[json-server dokumentáció](https://github.com/typicode/json-server)
+
+## ProductService
+- Az alkalmazás már rendelkezik a ProductService szolgáltatással, ezt kell 
+továbbfejleszteni.
+- Készítsetek metódusokat, amelyek lekérik az összes terméket, frissítenek, 
+törölnek bizonyos termékeket az adatbázisból. (getAll, update, remove).
+- Ezek mind a json-server szabványos kéréseit használják az adatok valós 
+frissítésére.
+- A getAll esetén nem kell paraméter, mivel itt az összes terméket le akarjuk 
+kérni, de az update és remove metódusoknak át kell adni az adott terméket, hogy 
+az id alapján meg tudjuk határoni, hogy a szerver melyiket frissítse vagy 
+törölje.
 
 ## Sok sikert!
 
