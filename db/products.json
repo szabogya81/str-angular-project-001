@@ -7,19 +7,8 @@
       "description": "Ebben az impozáns gyűjteményben megtalálod a díjnyertes alkotópáros, Steven Spielberg és George Lucas látványos akciójelenetekkel és humorral teli, összesen 6 Oscar-szobrot nyert Indiana Jones-sorozatának mind a 4 részét, valamint a filmekhez kapcsolódó számos izgalmas extrát.",
       "image": "./assets/img/IndianaJones.jpg",
       "price": 999,
-      "stock": 20,
+      "stock": "205",
       "featured": false,
-      "active": false
-    },
-    {
-      "id": 2,
-      "catId": 1,
-      "name": "Tenet",
-      "description": "A legsikeresebb Batman-trilógia és az Eredet rendezője, Christopher Nolan ismét különlegesen egyedi, izgalmas és meghökkentő fordulatokban gazdag thrillert rendezett, amelyen egy angol kémnek kellene megmentenie a Földet a rá leselkedő és pusztulással fenyegető katasztrófától. Ám a szuperügynöknek nemcsak az idegen hatalmak embereivel, hanem a legnagyobb ellenséggel, az Idővel is meg kell küzdenie.",
-      "image": "./assets/img/tenet.jpg",
-      "price": 1199,
-      "stock": 14,
-      "featured": true,
       "active": false
     },
     {
@@ -32,18 +21,6 @@
       "stock": 5,
       "featured": false,
       "active": true
-    },
-    {
-      "id": 4,
-      "catId": 1,
-      "name": "Sonic, a sündisznó",
-      "description": "Sonic, a sündisznó véletlenül hihetetlen erő birtokosa lesz, amit ő maga sem ért teljesen. Saját védelme érdekében a Földön rejtőzik el, és egyetlen szabályt kell betartania: nem szabad, hogy a világ tudomást szerezzen a létezéséről. Ám ez nem könnyű feladat egy 15 évesnek, főleg ha az a 15 éves Sonic képességeivel és habitusával van megáldva. Így aztán nem kell hozzá sok, hogy felfedezze őt Tom, a szarkasztikus, ám áldott jószívű kisvárosi zsaru. Ők ketten összeállnak, és hihetetlenül akciódús kalandokba keverednek, miközben átszelik a fél világot úgy, hogy közben üldözi őket a mániákus Dr. Robotnyik és robotszerkentyűi…",
-      "image": "./assets/img/sonic.jpg",
-      "price": 9499,
-      "stock": 7,
-      "featured": true,
-      "active": true,
-      "salePrice": 8999
     },
     {
       "id": 5,

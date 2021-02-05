@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { Product } from 'src/app/model/product';
 import { ConfigService, IMovTable } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
@@ -14,9 +15,7 @@ export class DataEditorComponent implements OnInit {
   categoryId = 0;
   filterStr: string = '';
 
-  products: Observable<Product[]> = this.productService.getAll();
-  // Observable<User[]> = this.userService.getAll();
-  // products = this.productService.getAll(this.categoryId, this.filterStr);
+  products: Observable<Product[]>;
 
   cols: IMovTable[] = this.config.movTableCols;
 
@@ -26,15 +25,20 @@ export class DataEditorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  }
-
-  onUpdate(movies: Product): void {
-    this.productService.update(movies);
-  }
-
-  onDelete(movies: Product): void {
-    this.productService.remove(movies);
+    this.setProducts();
   }
 
 
+  setProducts () {
+    this.products = this.productService.getAll(this.categoryId, this.filterStr);
+  }
+
+  onUpdate(movie: Product): void {
+    this.productService.update(movie).subscribe();
+  }
+
+  onDelete(movie: Product): void {
+    this.productService.remove(movie).subscribe( () =>
+    this.products = this.productService.getAll(this.categoryId, this.filterStr));
+  }
 }
