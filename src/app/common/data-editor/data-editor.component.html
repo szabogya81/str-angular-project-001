@@ -1,14 +1,68 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-
-
-      <div class="row">
-        <div class="col-12 my-3">
+      <div class="row my-4">
+        <div class="col-6 my-auto">
           <form class="search" action="/action_page.php">
-            <input (keyup)="onChangeFilter($event)" type="text" placeholder="Search by Name.." name="search">
+            <input (keyup)="onChangeFilter($event)" type="text" placeholder="Search.." name="search">
             <button class="button" type="submit"><i class="fa fa-search"></i></button>
           </form>
+        </div>
+
+        <div class="div__radioButtons col-6 d-flex flex-row flex-wrap justify-content-between">
+          <table class="table mb-0">
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--id" type="radio" id="id"
+                    name="id-radio" value="id">
+                  <label class="label__radioButton" for="ID">ID</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--catID" type="radio" id="catId"
+                    name="catId-radio" value="catId">
+                  <label class="label__radioButton" for="catId">catId</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--name" type="radio" id="name"
+                    name="name-radio" value="name">
+                  <label class="label__radioButton" for="name">Name</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--description" type="radio"
+                    id="description" name="description-radio" value="description">
+                  <label class="label__radioButton" for="description">Description</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--image" type="radio" id="image"
+                    name="image-radio" value="image">
+                  <label class="label__radioButton" for="image">Image URL</label><br>
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--price" type="radio" id="price"
+                    name="price-radio" value="price">
+                  <label class="label__radioButton" for="price">Price</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--stock" type="radio" id="stock"
+                    name="stock-radio" value="stock">
+                  <label class="label__radioButton" for="stock">Stock</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--featured" type="radio"
+                    id="featured" name="featured-radio" value="featured">
+                  <label class="label__radioButton" for="featured">Featured</label><br>
+                </td>
+                <td class="table__td">
+                  <input [(ngModel)]="key" class="input__radioButton input__radioButton--active" type="radio"
+                    id="active" name="active-radio" value="active">
+                  <label class="label__radioButton" for="active">Active</label><br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -21,7 +75,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products | async | filter:filterStr">
+          <tr *ngFor="let product of products | async | filter:filterStr:key  ">
             <td *ngFor="let col of cols">
               <input *ngIf="col.editable" [(ngModel)]="product[col.key]" type="text" class="form-control">
               <span *ngIf="!col.editable">{{ product[col.key] }}</span>
