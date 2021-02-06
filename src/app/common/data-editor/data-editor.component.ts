@@ -16,6 +16,8 @@ export class DataEditorComponent implements OnInit {
   @Output() deleteClick: EventEmitter<Product> = new EventEmitter();
 
   cols: IMovTable[] = this.config.movTableCols;
+  filterStr: any;
+  //key: any = 'name';
 
   constructor(
     private config: ConfigService
@@ -30,5 +32,9 @@ export class DataEditorComponent implements OnInit {
 
   onDelete(movie: Product): void {
     this.deleteClick.emit(movie);
+  }
+
+  onChangeFilter(event: Event): void {
+    this.filterStr = (event.target as HTMLInputElement).value;
   }
 }
