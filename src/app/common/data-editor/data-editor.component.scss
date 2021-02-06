@@ -1,3 +1,24 @@
+@use "../variables/colors"as *;
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+
+$heading-font-family: 'Montserrat',
+sans-serif;
+$paragraph-font-family: 'Open Sans',
+sans-serif;
+
+$light: 300;
+$regular: 400;
+$semi-bold: 500;
+$bold: 600;
+$font-regular: 400;
+
+$text-movie-title:22px;
+$text-summary:16px;
+$text-action-price:18px;
+$text-movie-description:14px;
+
 form.search {
     input[type=text] {
       padding: 10px;
@@ -30,4 +51,37 @@ form.search {
       display: table;
     }
   }
+
+.input__radioButton{
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  &:hover{
+    box-shadow: 0 0 35px $colors-laserRed;
+  }
   
+}
+
+.label__radioButton{
+  color: $colors-gray;
+  font-family: $paragraph-font-family;
+  font-size: $text-movie-description;
+  font-weight: $regular;
+  margin-bottom: 0;
+  padding-left: 0.25rem;
+  user-select: none;
+      
+}
+
+.table__row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.table__td{
+  border-style:hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

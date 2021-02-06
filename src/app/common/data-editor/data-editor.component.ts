@@ -17,7 +17,7 @@ export class DataEditorComponent implements OnInit {
 
   cols: IMovTable[] = this.config.movTableCols;
   filterStr: any;
-  //key: any = 'name';
+  key: any = 'name';
 
   constructor(
     private config: ConfigService
