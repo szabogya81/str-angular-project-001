@@ -13,33 +13,11 @@ export class FilterPipe implements PipeTransform {
 
     return value.filter(item => {
 
-      if (key === 'id') {
-        return (item[key].toString() === filterStr)
+      if (key === 'name' || key === 'description' || key === 'image') {
+        return (item[key].toLowerCase().includes(filterStr.toLowerCase()));
       }
-      if (key === 'catId') {
-        return (item[key].toString() === filterStr);
-      }
-      if (key === 'name') {
-        return (item[key].toLowerCase().includes(filterStr.toLowerCase()))
-      }
-      if (key === 'description') {
-        return (item[key].toLowerCase().includes(filterStr.toLowerCase()))
-      }
-      if (key === 'image') {
-        return (item[key].toLowerCase().includes(filterStr.toLowerCase()))
-      }
-      if (key === 'price') {
-        return (item[key].toString() === filterStr)
-      }
-      if (key === 'stock') {
-        return (item[key].toString() === filterStr)
-      }
-      if (key === 'featured') {
-        return (item[key].toString() === filterStr)
-      }
-      if (key === 'active') {
-        return (item[key].toString() === filterStr)
-      }
+      return (item[key].toString() === filterStr);
+
     });
   }
 }
